@@ -48,20 +48,22 @@ SERIAL = int((datetime.utcnow() - EPOCH).total_seconds())
 MY_IP = get_ip()
 
 print("+===============================+")
-print("|    RiiConnect24 DNS Server    |")
+print("|    Randnet DNS Server    |")
+#print("|    RiiConnect24 DNS Server    |")
+print("|    Mod of RC24 DNS Server    |")
 print("|          Version " + RIICONNECT24DNSSERVER_VERSION + "          |")
 print("+===============================+\n")
 
-print("Hello! This server will allow you to connect to RiiConnect24 when your Internet Service Provider does not work with custom DNS.")
+#print("Hello! This server will allow you to connect to RiiConnect24 when your Internet Service Provider does not work with custom DNS.")
 
-print("This tool will help you avoid error 107304 in the Forecast/News Channel. When you use the DNS on your Wii / DS or with this app, it also enhances the use of services such as Wiimmfi. This tool can also be used as a DNS server for Nintendo DS games.\n")
+#print("This tool will help you avoid error 107304 in the Forecast/News Channel. When you use the DNS on your Wii / DS or with this app, it also enhances the use of services such as Wiimmfi. This tool can also be used as a DNS server for Nintendo DS games.\n")
 
 
 print("#### How To Use ####\n")
-print("The setup process does not differ from what is shown at https://wii.guide/riiconnect24 except for the values to enter in your custom DNS settings.")
-print("First, make sure that your Wii / DS is connected to the same network as this computer.")
+#print("The setup process does not differ from what is shown at https://wii.guide/riiconnect24 except for the values to enter in your custom DNS settings.")
+#print("First, make sure that your Wii / DS is connected to the same network as this computer.")
 
-print("\nHere are the settings you need to type in on your Wii in the DNS section.:\n")
+#print("\nHere are the settings you need to type in on your Wii in the DNS section.:\n")
 print(":---------------------------:")
 print("  Primary DNS:  ",MY_IP  )
 print("  Secondary DNS: 1.1.1.1")
@@ -69,8 +71,8 @@ print(":---------------------------:")
 
 print("\nAll other settings should match what is shown at the above URL.\n")
 
-print("#### Getting Help ####\n")
-print("Need help? Visit our Discord server https://discord.gg/b4Y7jfD or contact us at support@riiconnect24.net\n")
+#print("#### Getting Help ####\n")
+#print("Need help? Visit our Discord server https://discord.gg/b4Y7jfD or contact us at support@riiconnect24.net\n")
 
 print("--- Starting up ---")
 
@@ -155,7 +157,7 @@ class Record:
 ZONES = {}
 
 try:
-  get_zones = requests.get("https://raw.githubusercontent.com/RiiConnect24/DNS-Server/master/dns_zones.json")
+  get_zones = requests.get("https://raw.githubusercontent.com/randnetdev/firmware/master/dns_zones.json")
 except requests.exceptions.Timeout:
   print("[ERROR] Couldn't load DNS data: connection to GitHub timed out.")
   print("[ERROR] Are you connected to the Internet?")
@@ -237,8 +239,8 @@ except PermissionError:
   sys.exit(1)
 
 print("-- Done --- \n")
-print("[INFO] Starting RiiConnect24 DNS server.")
-print("[INFO] Ready. Waiting for your Wii / DS to send DNS Requests...\n")
+#print("[INFO] Starting RiiConnect24 DNS server.")
+#print("[INFO] Ready. Waiting for your Wii / DS to send DNS Requests...\n")
 
 if __name__ == '__main__':
     for s in servers:
